@@ -4,6 +4,9 @@
 
 
 #include "io430.h"
+#include "CS.h"
+#include "Timer0_A3.h"
+#include "GPIO.h"
 
 
 
@@ -31,27 +34,9 @@ void mainStateMachine ( void );
 void initialization ( void );
 
 /**
- *@brief initialize the CS module
- *@param none
- */
-void ClockSystem_Init ( void );
-
-/**
- *@brief initialize the timer0_A3
- *@param none
- */
-void Timer0_A3_Init ( void );
-
-/**
- *@brief initialize the GPIO's
- *@param none
- */
-void GPIO_Init ( void );
-
-/**
  *@brief optical recognition boot success
  *@param none
  */
-void bootSuccess( void );
+void opticalBootSuccess( void );
 
-#endif
+#endif //main_h

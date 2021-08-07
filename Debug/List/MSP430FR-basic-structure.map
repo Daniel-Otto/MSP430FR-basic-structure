@@ -2,7 +2,7 @@
 #                                                                              #
 #      IAR Universal Linker V6.6.2.104                                         #
 #                                                                              #
-#           Link time     =  06/Aug/2021  20:20:15                             #
+#           Link time     =  07/Aug/2021  18:56:44                             #
 #           Target CPU    =  MSP430                                            #
 #           List file     =  C:\ew430\MSP430FR-basic-structure\Debug\List\MSP4 #
 #                            30FR-basic-structure.map                          #
@@ -11,9 +11,15 @@
 #                            Format: ubrof10                                   #
 #                            UBROF version 10.0.6                              #
 #                            Using library modules for C-SPY (-rt)             #
-#           Command line  =  -f C:\Users\danie\AppData\Local\Temp\EW5B13.tmp   #
-#                            (C:\ew430\MSP430FR-basic-structure\Debug\Obj\main #
-#                            .r43                                              #
+#           Command line  =  -f C:\Users\danie\AppData\Local\Temp\EW5943.tmp   #
+#                            (C:\ew430\MSP430FR-basic-structure\Debug\Obj\CS.r #
+#                            43                                                #
+#                            C:\ew430\MSP430FR-basic-structure\Debug\Obj\GPIO. #
+#                            r43                                               #
+#                            C:\ew430\MSP430FR-basic-structure\Debug\Obj\main. #
+#                            r43                                               #
+#                            C:\ew430\MSP430FR-basic-structure\Debug\Obj\Timer #
+#                            0_A3.r43                                          #
 #                            -o                                                #
 #                            C:\ew430\MSP430FR-basic-structure\Debug\Exe\MSP43 #
 #                            0FR-basic-structure.d43                           #
@@ -142,8 +148,8 @@ Absolute parts
            __iar_HWMUL             04C0 
     *************************************************************************
 
-  FILE NAME : C:\ew430\MSP430FR-basic-structure\Debug\Obj\main.r43
-  PROGRAM MODULE, NAME : main
+  FILE NAME : C:\ew430\MSP430FR-basic-structure\Debug\Obj\CS.r43
+  PROGRAM MODULE, NAME : CS
 
   SEGMENTS IN THE MODULE
   ======================
@@ -198,9 +204,23 @@ DATA16_AN
            CSCTL3_L                0166 
            CSCTL3_bit              0166 
     -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: 44CE - 44E9 (0x1c bytes), align: 1
+  Segment part 6.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ClockSystem_Init        44CE            initialization (main)
+
+    *************************************************************************
+
+  FILE NAME : C:\ew430\MSP430FR-basic-structure\Debug\Obj\GPIO.r43
+  PROGRAM MODULE, NAME : GPIO
+
+  SEGMENTS IN THE MODULE
+  ======================
 DATA16_AN
   Relative segment, address: 0130 - 0131 (0x2 bytes), align: 0
-  Segment part 5. ROOT        Intra module refs:   GPIO_Init
+  Segment part 1. ROOT        Intra module refs:   GPIO_Init
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_PM5CTL0              0130 
@@ -212,26 +232,8 @@ DATA16_AN
            PM5CTL0_bit             0130 
     -------------------------------------------------------------------------
 DATA16_AN
-  Relative segment, address: 0202 - 0203 (0x2 bytes), align: 0
-  Segment part 6. ROOT        Intra module refs:   Timer0_A0_ISR
-                                                   bootSuccess
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           _A_PAOUT                0202 
-           LOCAL                   ADDRESS         
-           =====                   =======         
-           P1OUT                   0202 
-           P1OUT_bit               0202 
-           P2OUT                   0203 
-           P2OUT_bit               0203 
-           PAOUT                   0202 
-           PAOUT_H                 0203 
-           PAOUT_L                 0202 
-           PAOUT_bit               0202 
-    -------------------------------------------------------------------------
-DATA16_AN
   Relative segment, address: 0204 - 0205 (0x2 bytes), align: 0
-  Segment part 7. ROOT        Intra module refs:   GPIO_Init
+  Segment part 2. ROOT        Intra module refs:   GPIO_Init
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_PADIR                0204 
@@ -247,8 +249,57 @@ DATA16_AN
            PADIR_bit               0204 
     -------------------------------------------------------------------------
 DATA16_AN
+  Relative segment, address: 0284 - 0285 (0x2 bytes), align: 0
+  Segment part 3. ROOT        Intra module refs:   GPIO_Init
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_PEDIR                0284 
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           P10DIR                  0285 
+           P10DIR_bit              0285 
+           P9DIR                   0284 
+           P9DIR_bit               0284 
+           PEDIR                   0284 
+           PEDIR_H                 0285 
+           PEDIR_L                 0284 
+           PEDIR_bit               0284 
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: 4522 - 4531 (0x10 bytes), align: 1
+  Segment part 5.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           GPIO_Init               4522            initialization (main)
+
+    *************************************************************************
+
+  FILE NAME : C:\ew430\MSP430FR-basic-structure\Debug\Obj\main.r43
+  PROGRAM MODULE, NAME : main
+
+  SEGMENTS IN THE MODULE
+  ======================
+DATA16_AN
+  Relative segment, address: 0202 - 0203 (0x2 bytes), align: 0
+  Segment part 1. ROOT        Intra module refs:   Timer0_A0_ISR (Timer0_A3)
+                                                   opticalBootSuccess
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_PAOUT                0202 
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           P1OUT                   0202 
+           P1OUT_bit               0202 
+           P2OUT                   0203 
+           P2OUT_bit               0203 
+           PAOUT                   0202 
+           PAOUT_H                 0203 
+           PAOUT_L                 0202 
+           PAOUT_bit               0202 
+    -------------------------------------------------------------------------
+DATA16_AN
   Relative segment, address: 0282 - 0283 (0x2 bytes), align: 0
-  Segment part 8. ROOT        Intra module refs:   bootSuccess
+  Segment part 2. ROOT        Intra module refs:   opticalBootSuccess
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_PEOUT                0282 
@@ -264,25 +315,9 @@ DATA16_AN
            PEOUT_bit               0282 
     -------------------------------------------------------------------------
 DATA16_AN
-  Relative segment, address: 0284 - 0285 (0x2 bytes), align: 0
-  Segment part 9. ROOT        Intra module refs:   GPIO_Init
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           _A_PEDIR                0284 
-           LOCAL                   ADDRESS         
-           =====                   =======         
-           P10DIR                  0285 
-           P10DIR_bit              0285 
-           P9DIR                   0284 
-           P9DIR_bit               0284 
-           PEDIR                   0284 
-           PEDIR_H                 0285 
-           PEDIR_L                 0284 
-           PEDIR_bit               0284 
-    -------------------------------------------------------------------------
-DATA16_AN
   Relative segment, address: 0340 - 0341 (0x2 bytes), align: 0
-  Segment part 10. ROOT       Intra module refs:   Timer0_A3_Init
+  Segment part 3. ROOT        Intra module refs:   Timer0_A3_Init (Timer0_A3)
+                                                   mainStateMachine
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_TA0CTL               0340 
@@ -292,27 +327,8 @@ DATA16_AN
            TA0CTL_bit              0340 
     -------------------------------------------------------------------------
 DATA16_AN
-  Relative segment, address: 0342 - 0343 (0x2 bytes), align: 0
-  Segment part 11. ROOT       Intra module refs:   Timer0_A3_Init
-                                                   mainStateMachine
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           _A_TA0CCTL0             0342 
-           LOCAL                   ADDRESS         
-           =====                   =======         
-           TA0CCTL0                0342 
-           TA0CCTL0_bit            0342 
-    -------------------------------------------------------------------------
-DATA16_AN
-  Relative segment, address: 0352 - 0353 (0x2 bytes), align: 0
-  Segment part 12. ROOT       Intra module refs:   Timer0_A3_Init
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           TA0CCR0                 0352 
-    -------------------------------------------------------------------------
-DATA16_AN
   Relative segment, address: 015C - 015D (0x2 bytes), align: 0
-  Segment part 13. ROOT       Intra module refs:   Timer0_A0_ISR
+  Segment part 4. ROOT        Intra module refs:   Timer0_A0_ISR (Timer0_A3)
                                                    initialization
                                                    main
                                                    mainStateMachine
@@ -328,66 +344,77 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_Z
   Relative segment, address: 1C00 - 1C00 (0x1 bytes), align: 0
-  Segment part 16.            Intra module refs:   mainStateMachine
+  Segment part 6.             Intra module refs:   mainStateMachine
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            mainTask                1C00 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 4530 - 453D (0xe bytes), align: 1
-  Segment part 23.
+  Relative segment, address: 4532 - 453F (0xe bytes), align: 1
+  Segment part 10.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           main                    4530            Segment part 27 (?cstart)
+           main                    4532            Segment part 27 (?cstart)
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 4424 - 4471 (0x4e bytes), align: 1
-  Segment part 22.            Intra module refs:   main
+  Relative segment, address: 4424 - 4473 (0x50 bytes), align: 1
+  Segment part 9.             Intra module refs:   main
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            mainStateMachine        4424 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 44CC - 44E7 (0x1c bytes), align: 1
-  Segment part 21.            Intra module refs:   mainStateMachine
+  Relative segment, address: 44B2 - 44CD (0x1c bytes), align: 1
+  Segment part 8.             Intra module refs:   mainStateMachine
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           initialization          44CC 
+           initialization          44B2 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 44B0 - 44CB (0x1c bytes), align: 1
-  Segment part 20.            Intra module refs:   initialization
+  Relative segment, address: 4474 - 44B1 (0x3e bytes), align: 1
+  Segment part 7.             Intra module refs:   initialization
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ClockSystem_Init        44B0 
+           opticalBootSuccess      4474 
+
+    *************************************************************************
+
+  FILE NAME : C:\ew430\MSP430FR-basic-structure\Debug\Obj\Timer0_A3.r43
+  PROGRAM MODULE, NAME : Timer0_A3
+
+  SEGMENTS IN THE MODULE
+  ======================
+DATA16_AN
+  Relative segment, address: 0342 - 0343 (0x2 bytes), align: 0
+  Segment part 3. ROOT        Intra module refs:   Timer0_A3_Init
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_TA0CCTL0             0342 
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           TA0CCTL0                0342 
+           TA0CCTL0_bit            0342 
+    -------------------------------------------------------------------------
+DATA16_AN
+  Relative segment, address: 0352 - 0353 (0x2 bytes), align: 0
+  Segment part 4. ROOT        Intra module refs:   Timer0_A3_Init
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           TA0CCR0                 0352 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 44FC - 450F (0x14 bytes), align: 1
-  Segment part 19.            Intra module refs:   initialization
+  Relative segment, address: 44EA - 44FD (0x14 bytes), align: 1
+  Segment part 8.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           Timer0_A3_Init          44FC 
-    -------------------------------------------------------------------------
-<CODE> 1 (was CODE)
-  Relative segment, address: 4520 - 452F (0x10 bytes), align: 1
-  Segment part 18.            Intra module refs:   initialization
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           GPIO_Init               4520 
-    -------------------------------------------------------------------------
-<CODE> 1 (was CODE)
-  Relative segment, address: 4472 - 44AF (0x3e bytes), align: 1
-  Segment part 17.            Intra module refs:   initialization
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           bootSuccess             4472 
+           Timer0_A3_Init          44EA            initialization (main)
     -------------------------------------------------------------------------
 ISR_CODE
   Relative segment, address: 4418 - 4423 (0xc bytes), align: 1
-  Segment part 24.            Intra module refs:   Timer0_A0_ISR::??INTVEC 88
+  Segment part 9.             Intra module refs:   Timer0_A0_ISR::??INTVEC 88
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            Timer0_A0_ISR           4418 
@@ -395,7 +422,7 @@ ISR_CODE
     -------------------------------------------------------------------------
 INTVEC
   Common segment, address: FF90 - FFE9 (0x5a bytes), align: 1
-  Segment part 14. ROOT 
+  Segment part 6. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            Timer0_A0_ISR::??INTVEC 88
@@ -409,11 +436,11 @@ INTVEC
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 4546 - 4547 (0x2 bytes), align: 1
+  Relative segment, address: 4548 - 4549 (0x2 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __DebugBreak            4546            __exit (?__exit)
+           __DebugBreak            4548            __exit (?__exit)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?__exit
@@ -421,11 +448,11 @@ INTVEC
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 44E8 - 44FB (0x14 bytes), align: 1
+  Relative segment, address: 44FE - 4511 (0x14 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __exit                  44E8            Segment part 6 (?_exit)
+           __exit                  44FE            Segment part 6 (?_exit)
                                                    _exit (?_exit)
                calls direct
 
@@ -435,14 +462,14 @@ INTVEC
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 4542, align: 1
+  Relative segment, address: 4544, align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           _exit                   4542            exit (?exit)
+           _exit                   4544            exit (?exit)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 4542 - 4545 (0x4 bytes), align: 1
+  Relative segment, address: 4544 - 4547 (0x4 bytes), align: 1
   Segment part 6.             Intra module refs:   _exit
 
     -------------------------------------------------------------------------
@@ -463,7 +490,7 @@ CODE_I
   Segment part 5.
     -------------------------------------------------------------------------
 CODE_ID
-  Relative segment, address: 4548, align: 1
+  Relative segment, address: 454A, align: 1
   Segment part 6.
     -------------------------------------------------------------------------
 DATA20_Z
@@ -475,11 +502,11 @@ DATA20_I
   Segment part 8.
     -------------------------------------------------------------------------
 DATA20_ID
-  Relative segment, address: 4548, align: 1
+  Relative segment, address: 454A, align: 1
   Segment part 9.
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 4548, align: 1
+  Relative segment, address: 454A, align: 1
   Segment part 10.
     -------------------------------------------------------------------------
 DATA20_N
@@ -511,7 +538,7 @@ CSTART
            ?cstart_end             4418 
     -------------------------------------------------------------------------
 CODE_ID
-  Relative segment, address: 4548, align: 1
+  Relative segment, address: 454A, align: 1
   Segment part 28.            Intra module refs:   Segment part 5
 
     -------------------------------------------------------------------------
@@ -532,11 +559,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 453E - 4541 (0x4 bytes), align: 1
+  Relative segment, address: 4540 - 4543 (0x4 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           exit                    453E            Segment part 27 (?cstart)
+           exit                    4540            Segment part 27 (?cstart)
                calls direct
 
     -------------------------------------------------------------------------
@@ -545,11 +572,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 4510 - 451F (0x10 bytes), align: 1
+  Relative segment, address: 4512 - 4521 (0x10 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __data16_memzero        4510            ?cstart_init_zero (?cstart)
+           __data16_memzero        4512            ?cstart_init_zero (?cstart)
 
 
 
@@ -579,10 +606,10 @@ DATA20_N                                  1C02                       rel    1
 CSTACK                                 2360 - 23FF              A0   rel    1
 CSTART                                 4400 - 4417              18   rel    1
 ISR_CODE                               4418 - 4423               C   rel    1
-<CODE> 1                               4424 - 4547             124   rel    1
-DATA20_ID                                 4548                       rel    1
-CODE_ID                                   4548                       rel    1
-DATA20_C                                  4548                       rel    1
+<CODE> 1                               4424 - 4549             126   rel    1
+DATA20_ID                                 454A                       rel    1
+CODE_ID                                   454A                       rel    1
+DATA20_C                                  454A                       rel    1
 INTVEC                                 FF90 - FFE9              5A   com    1
 RESET                                  FFFE - FFFF               2   rel    1
 
@@ -592,7 +619,7 @@ RESET                                  FFFE - FFFF               2   rel    1
                 *                                      *
                 ****************************************
 
- 420 bytes of CODE memory
+ 422 bytes of CODE memory
  161 bytes of DATA memory (+ 26 absolute )
 
 Errors: none

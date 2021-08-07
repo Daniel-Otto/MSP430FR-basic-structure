@@ -16,7 +16,7 @@ int main( void ){
   WDTCTL = WDTPW | WDTHOLD;     // Stop watchdog timer
 
   while(1){
-    mainStateMachine();         // run the state main state machine
+    mainStateMachine();         // run the main state machine
   } //while 
 } //main 
 
@@ -32,11 +32,12 @@ void mainStateMachine(){
     break;
     
   case SLEEP:
-    TA0CCTL0 = CCIE;                    // TACCR0 interrupt enabled
+    TA0CTL |= MC__UP;                   // Timer0_A3 Up Mode
+    asm("NOP");                         // For debugging
     __bis_SR_register(LPM3_bits);       // Enter LPM3
-    TA0CCTL0 &= ~CCIE;                  // TACCR0 interrupt disabled
+    TA0CTL |= MC__STOP;                 // Timer0_A3 Stop
     WDTCTL = WDT_ARST_1000;             // Reset WDT
-    asm("NOP");                         // For debugger
+    asm("NOP");                         // For debugging
     break;
     
   case APP:
@@ -68,7 +69,7 @@ void initialization (){
   Timer0_A3_Init();             // timer for resetting the WDT
   GPIO_Init();                  // Configure GPIO
   
-  bootSuccess();                // Boot succeed sequence
+  opticalBootSuccess();         // Boot succeed sequence
   
   WDTCTL = WDT_ARST_1000;       // Start WDT
   
@@ -78,37 +79,7 @@ void initialization (){
 
 
 
-void ClockSystem_Init (){
-  CSCTL0_H = CSKEY >> 8;                    // Unlock CS registers
-  CSCTL1 = DCOFSEL_6;                       // Set DCO to 8MHz
-  // Set SMCLK = MCLK = DCO     ACLK = VLOCLK
-  CSCTL2 = SELA__VLOCLK | SELS__DCOCLK | SELM__DCOCLK;
-  CSCTL3 = DIVA__1 | DIVS__1 | DIVM__1;     // Set all dividers to 1
-  CSCTL0_H = 0;
-} //fkt
-
-
-
-void Timer0_A3_Init(){
-  TA0CCTL0 = CCIE;                      // TACCR0 interrupt enabled
-  TA0CCR0 = 9500;
-  TA0CTL = TASSEL__ACLK | MC__UP;       // ACLK, UP mode
-} //fkt
-
-
-
-void GPIO_Init (){
-  P1DIR |= BIT0;        // Set P1.0 to output direction
-  P9DIR |= BIT7;        // Set P2.9 to output direction
-  
-  // Disable the GPIO power-on default high-impedance mode to activate
-  // previously configured port settings
-  PM5CTL0 &= ~LOCKLPM5;
-} //fkt
-
-
-
-void bootSuccess (){
+void opticalBootSuccess (){
   P9OUT |= BIT7;
   
   for(int i = 0; i < 5; i++){
@@ -120,11 +91,3 @@ void bootSuccess (){
   
   P9OUT &= ~BIT7;
 } //fkt
-
-
-
-#pragma vector = TIMER0_A0_VECTOR
-__interrupt void Timer0_A0_ISR (void){
-  P1OUT ^= BIT0;                // toggle LED @ P1.0
-  WDTCTL = WDT_ARST_1000;       // Reset WDT
-} //isr
