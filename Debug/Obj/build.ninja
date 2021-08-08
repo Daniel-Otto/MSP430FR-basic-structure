@@ -21,10 +21,14 @@ rule browsedata
 
 #Build steps
 build CS.pbi : index CS.xcl
+build EUSCI_A0_UART.pbi : index EUSCI_A0_UART.xcl
 build GPIO.pbi : index GPIO.xcl
 build main.pbi : index main.xcl
 build Timer0_A3.pbi : index Timer0_A3.xcl
-build MSP430FR-basic-structure.pbd : link CS.pbi GPIO.pbi main.pbi Timer0_A3.pbi
+build MSP430FR-basic-structure_part0.pbi : link CS.pbi EUSCI_A0_UART.pbi
+build MSP430FR-basic-structure_part1.pbi : link GPIO.pbi main.pbi
+build MSP430FR-basic-structure_part2.pbi : link Timer0_A3.pbi
+build MSP430FR-basic-structure.pbd : link MSP430FR-basic-structure_part0.pbi MSP430FR-basic-structure_part1.pbi MSP430FR-basic-structure_part2.pbi
 build MSP430FR-basic-structure.pbw : browsedata MSP430FR-basic-structure.pbd
 
 

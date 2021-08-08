@@ -1,4 +1,5 @@
-main.pbi: C:\ew430\MSP430FR-basic-structure\GPIO.h \
+main.pbi: C:\ew430\MSP430FR-basic-structure\EUSCI_A0_UART.h \
+  C:\ew430\MSP430FR-basic-structure\GPIO.h \
   C:\ew430\MSP430FR-basic-structure\Timer0_A3.h \
   C:\ew430\MSP430FR-basic-structure\CS.h \
   C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.5\430\inc\intrinsics.h \

@@ -2162,6 +2162,12 @@
         <name>$PROJ_DIR$\CS.h</name>
     </file>
     <file>
+        <name>$PROJ_DIR$\EUSCI_A0_UART.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\EUSCI_A0_UART.h</name>
+    </file>
+    <file>
         <name>$PROJ_DIR$\GPIO.c</name>
     </file>
     <file>
