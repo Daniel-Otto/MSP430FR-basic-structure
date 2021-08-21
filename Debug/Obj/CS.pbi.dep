@@ -1,5 +1,5 @@
-CS.pbi: C:\ew430\MSP430FR-basic-structure\CS.h \
-  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.5\430\inc\intrinsics.h \
-  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.5\430\inc\io430fr6989.h \
+CS.pbi: C:\ew430\MSP430FR-basic-structure\CS.c \
   C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.5\430\inc\io430.h \
-  C:\ew430\MSP430FR-basic-structure\CS.c
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.5\430\inc/io430fr6989.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.5\430\inc/intrinsics.h \
+  C:\ew430\MSP430FR-basic-structure/CS.h

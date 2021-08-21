@@ -3,10 +3,10 @@
  * @date        06.08.2021
  * @version     0.1a
  * @brief       A fundamental code from where to build on. Which includes e.g.:
- *                      - a State Machine
+ *                      - a Main and IRQ State Machine
  *                      - the Watchdog
  *                      - communication over UART
- *                      - a Bootloader over UART (OTA / SPI)
+ *                      - a Bootloader over UART  poss. later (OTA / SPI)
  *              Please read the README.md for more information.
  * @copyright   GNU Public License
  ******************************************************************************/
@@ -56,7 +56,7 @@ void mainStateMachine(){
     
   case IRQ_EVAL:
     // 
-    irqStateMachine();                  // do something
+    irqStateMachine();                  // evaluate the irq's
     mainTask = RST_WD;
     break;
     
@@ -83,10 +83,12 @@ void irqStateMachine (){
   switch( irqTask ){
     
   case UART_A0_RX:
-    while(!(UCA0IFG&UCTXIFG));
-    UCA0TXBUF = UCA0RXBUF;
-    __no_operation();
-    irqTask = NONE;
+    while(!(UCA0IFG&UCTXIFG));  // check if UCA0 TX is finished
+    UCA0TXBUF = UCA0RXBUF;      // put recieved byte in send buffer (echo)
+    __no_operation();           // For debugging
+    irqTask = NONE;             // reset irq task because the handler finished
+                                // operation automatically reset the main task
+                                // and after kicking WD go into LPM
     break;
     
   case UART_A0_TX:
@@ -111,7 +113,7 @@ void irqStateMachine (){
 void initialization (){
   
   ClockSystem_Init();           // Clock System Setup
-  UART_A0_Init();
+  UART_A0_Init();               // P2.0,1 Rx, Tx @ 9600 8N1
   Timer0_A3_Init();             // timer for resetting the WDT
   GPIO_Init();                  // Configure GPIO
   
@@ -163,5 +165,5 @@ __interrupt void USCI_A0_ISR(void)
     case USCI_UART_UCSTTIFG: break;
     case USCI_UART_UCTXCPTIFG: break;
   }
-  __bic_SR_register(LPM3_bits); // exits LPM3
+  __bic_SR_register_on_exit(LPM3_bits); // exits LPM3
 }

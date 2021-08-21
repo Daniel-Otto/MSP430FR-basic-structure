@@ -2,7 +2,7 @@
 #                                                                              #
 #      IAR Universal Linker V6.6.2.104                                         #
 #                                                                              #
-#           Link time     =  08/Aug/2021  18:56:50                             #
+#           Link time     =  21/Aug/2021  11:38:53                             #
 #           Target CPU    =  MSP430                                            #
 #           List file     =  C:\ew430\MSP430FR-basic-structure\Debug\List\MSP4 #
 #                            30FR-basic-structure.map                          #
@@ -11,7 +11,7 @@
 #                            Format: ubrof10                                   #
 #                            UBROF version 10.0.6                              #
 #                            Using library modules for C-SPY (-rt)             #
-#           Command line  =  -f C:\Users\danie\AppData\Local\Temp\EWCD75.tmp   #
+#           Command line  =  -f C:\Users\danie\AppData\Local\Temp\EW9410.tmp   #
 #                            (C:\ew430\MSP430FR-basic-structure\Debug\Obj\CS.r #
 #                            43                                                #
 #                            C:\ew430\MSP430FR-basic-structure\Debug\Obj\EUSCI #
@@ -207,11 +207,11 @@ DATA16_AN
            CSCTL3_bit              0166 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 4578 - 4593 (0x1c bytes), align: 1
+  Relative segment, address: 457A - 4595 (0x1c bytes), align: 1
   Segment part 6.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ClockSystem_Init        4578            initialization (main)
+           ClockSystem_Init        457A            initialization (main)
 
     *************************************************************************
 
@@ -320,11 +320,11 @@ DATA16_AN
            UCA0IE__UART_bit        05DA 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 44FA - 4529 (0x30 bytes), align: 1
+  Relative segment, address: 44FC - 452B (0x30 bytes), align: 1
   Segment part 8.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           UART_A0_Init            44FA            initialization (main)
+           UART_A0_Init            44FC            initialization (main)
 
     *************************************************************************
 
@@ -381,11 +381,11 @@ DATA16_AN
            PEDIR_bit               0284 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 45CE - 45DD (0x10 bytes), align: 1
+  Relative segment, address: 45D0 - 45DF (0x10 bytes), align: 1
   Segment part 5.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           GPIO_Init               45CE            initialization (main)
+           GPIO_Init               45D0            initialization (main)
 
     *************************************************************************
 
@@ -529,42 +529,42 @@ DATA16_I
            irqTask                 1C00 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 45EE - 45FB (0xe bytes), align: 1
+  Relative segment, address: 45F0 - 45FD (0xe bytes), align: 1
   Segment part 19.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           main                    45EE            Segment part 27 (?cstart)
+           main                    45F0            Segment part 27 (?cstart)
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 445C - 44BB (0x60 bytes), align: 1
+  Relative segment, address: 445E - 44BD (0x60 bytes), align: 1
   Segment part 18.            Intra module refs:   main
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           mainStateMachine        445C 
+           mainStateMachine        445E 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 452A - 4557 (0x2e bytes), align: 1
+  Relative segment, address: 452C - 4559 (0x2e bytes), align: 1
   Segment part 15.            Intra module refs:   mainStateMachine
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           irqStateMachine         452A 
+           irqStateMachine         452C 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 4558 - 4577 (0x20 bytes), align: 1
+  Relative segment, address: 455A - 4579 (0x20 bytes), align: 1
   Segment part 17.            Intra module refs:   mainStateMachine
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           initialization          4558 
+           initialization          455A 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 44BC - 44F9 (0x3e bytes), align: 1
+  Relative segment, address: 44BE - 44FB (0x3e bytes), align: 1
   Segment part 16.            Intra module refs:   initialization
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           opticalBootSuccess      44BC 
+           opticalBootSuccess      44BE 
     -------------------------------------------------------------------------
 ISR_CODE
   Relative segment, address: 442A - 4439 (0x10 bytes), align: 1
@@ -575,7 +575,7 @@ ISR_CODE
                interrupt function
     -------------------------------------------------------------------------
 ISR_CODE
-  Relative segment, address: 443A - 445B (0x22 bytes), align: 1
+  Relative segment, address: 443A - 445D (0x24 bytes), align: 1
   Segment part 21.            Intra module refs:   USCI_A0_ISR::??INTVEC 94
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
@@ -628,11 +628,11 @@ DATA16_AN
            TA0CCR0                 0352 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 4594 - 45A7 (0x14 bytes), align: 1
+  Relative segment, address: 4596 - 45A9 (0x14 bytes), align: 1
   Segment part 5.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           Timer0_A3_Init          4594            initialization (main)
+           Timer0_A3_Init          4596            initialization (main)
 
     *************************************************************************
 
@@ -642,11 +642,11 @@ DATA16_AN
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 4608 - 4609 (0x2 bytes), align: 1
+  Relative segment, address: 460A - 460B (0x2 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __DebugBreak            4608            __exit (?__exit)
+           __DebugBreak            460A            __exit (?__exit)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?__exit
@@ -654,11 +654,11 @@ DATA16_AN
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 45A8 - 45BB (0x14 bytes), align: 1
+  Relative segment, address: 45AA - 45BD (0x14 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __exit                  45A8            Segment part 6 (?_exit)
+           __exit                  45AA            Segment part 6 (?_exit)
                                                    _exit (?_exit)
                calls direct
 
@@ -668,14 +668,14 @@ DATA16_AN
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 4600, align: 1
+  Relative segment, address: 4602, align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           _exit                   4600            exit (?exit)
+           _exit                   4602            exit (?exit)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 4600 - 4603 (0x4 bytes), align: 1
+  Relative segment, address: 4602 - 4605 (0x4 bytes), align: 1
   Segment part 6.             Intra module refs:   _exit
 
     -------------------------------------------------------------------------
@@ -704,7 +704,7 @@ CODE_I
   Segment part 5.
     -------------------------------------------------------------------------
 CODE_ID
-  Relative segment, address: 460A, align: 1
+  Relative segment, address: 460C, align: 1
   Segment part 6.
     -------------------------------------------------------------------------
 DATA20_Z
@@ -716,11 +716,11 @@ DATA20_I
   Segment part 8.
     -------------------------------------------------------------------------
 DATA20_ID
-  Relative segment, address: 460A, align: 1
+  Relative segment, address: 460C, align: 1
   Segment part 9.
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 460A, align: 1
+  Relative segment, address: 460C, align: 1
   Segment part 10.
     -------------------------------------------------------------------------
 DATA20_N
@@ -759,7 +759,7 @@ CSTART
            ?cstart_end             442A 
     -------------------------------------------------------------------------
 CODE_ID
-  Relative segment, address: 460A, align: 1
+  Relative segment, address: 460C, align: 1
   Segment part 28.            Intra module refs:   Segment part 5
 
     -------------------------------------------------------------------------
@@ -780,11 +780,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 45FC - 45FF (0x4 bytes), align: 1
+  Relative segment, address: 45FE - 4601 (0x4 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           exit                    45FC            Segment part 27 (?cstart)
+           exit                    45FE            Segment part 27 (?cstart)
                calls direct
 
     -------------------------------------------------------------------------
@@ -793,11 +793,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 45BC - 45CD (0x12 bytes), align: 1
+  Relative segment, address: 45BE - 45CF (0x12 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           memcpy                  45BC            __data16_memcpy (?memzero)
+           memcpy                  45BE            __data16_memcpy (?memzero)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?memzero
@@ -805,18 +805,18 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 45DE - 45ED (0x10 bytes), align: 1
+  Relative segment, address: 45E0 - 45EF (0x10 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __data16_memzero        45DE            ?cstart_init_zero (?cstart)
+           __data16_memzero        45E0            ?cstart_init_zero (?cstart)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 4604 - 4607 (0x4 bytes), align: 1
+  Relative segment, address: 4606 - 4609 (0x4 bytes), align: 1
   Segment part 3.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __data16_memcpy         4604            ?cstart_init_copy (?cstart)
+           __data16_memcpy         4606            ?cstart_init_copy (?cstart)
                calls direct
 
 
@@ -853,11 +853,11 @@ CSTACK                                 2360 - 23FF              A0   rel    1
 DATA16_C                                  4400                       dse    0
 DATA16_ID                              4400 - 4400               1   rel    1
 CSTART                                 4402 - 4429              28   rel    1
-ISR_CODE                               442A - 445B              32   rel    1
-<CODE> 1                               445C - 4609             1AE   rel    1
-CODE_ID                                   460A                       rel    1
-DATA20_ID                                 460A                       rel    1
-DATA20_C                                  460A                       rel    1
+ISR_CODE                               442A - 445D              34   rel    1
+<CODE> 1                               445E - 460B             1AE   rel    1
+CODE_ID                                   460C                       rel    1
+DATA20_ID                                 460C                       rel    1
+DATA20_C                                  460C                       rel    1
 INTVEC                                 FF90 - FFEF              60   com    1
 RESET                                  FFFE - FFFF               2   rel    1
 
@@ -867,7 +867,7 @@ RESET                                  FFFE - FFFF               2   rel    1
                 *                                      *
                 ****************************************
 
- 618 bytes of CODE  memory
+ 620 bytes of CODE  memory
  162 bytes of DATA  memory (+ 46 absolute )
    1 byte  of CONST memory
 
